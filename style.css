@@ -1,0 +1,185 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/*すべての要素に box-sizing: border-box; を適用する
+この設定により、width には padding と border の幅が含まれるようになり、要素が親コンテナの幅を超えることはなくなります。これがモダンなCSSの開発ではよく使用されるアプローチ*/
+
+* {
+  box-sizing: border-box;
+}
+
+body{
+  background-color:#D7F1E8;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+form{
+  background-color: #ffffff;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 40px;
+  max-width:800px;
+}
+.flex{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap:10px;
+}
+
+.flex-wrapper{
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+}
+
+.width{
+  width:100%;
+}
+
+input{
+  width:100%;
+  height: 40px;
+  border-radius: 10px;
+  border:solid 1px #C0BBBB;
+  padding: 2px 20px;
+}
+.radio-bottun-wrapper{
+  display: flex;
+  gap:20px;
+}
+.radio-bottun{
+  display: flex;
+  align-items: center;
+  gap:20px;
+  width:50%;
+  border:solid 1px #C0BBBB;
+  border-radius: 10px;
+  padding: 4px 18px;
+}
+.radio-bottun input{
+  width:20px;
+}
+
+.query-wrapper{
+  gap:10px;
+}
+.message{
+  border:solid 1px #C0BBBB;
+  border-radius: 10px;
+  padding: 20px;
+}
+.contact{
+  display: flex;
+  align-items: center;
+  gap:20px;
+}
+.contact input{
+  width:20px;
+}
+.contact label a{
+  text-decoration: none;
+  color: #333333;
+}
+.submit{
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 16px;
+  background-color:#098E5E;
+  padding: 10px 0;
+  height: 50px;
+}
+
+.hissu{
+  position: relative;
+}
+.hissu::after{
+  position: absolute;
+  content: "*";
+  color: #098E5E;
+  margin-left: 5px;
+}
+
+
+
+/*入力項目がクリックされた時*/
+input:focus, textarea:focus {
+  outline: 2px solid #098E5E; /* Change to your preferred color */
+  box-shadow: 0 0 5px rgba(100, 149, 237, 0.5); /* Subtle glow effect */
+  border-color: #6495ED; /* Match the outline color */
+ /* transition: all 0.3s ease;  Smooth transition effect */
+}
+
+/*contactのチェック項目は↑のスタイルを当てない*/
+.contact input:focus,input[type="radio"]:focus {
+  outline: none; /* Remove the outline property */
+  box-shadow: none; /* Subtle glow effect */
+}
+
+
+/*ラジオボタンがアクティブな時のボタンの色*/
+input[type="radio"]:checked {
+  accent-color: #098E5E;
+  background-color: #ffffff;
+}
+
+
+/*ラジオボタンがチェックされた時のスタイル*/
+/* .radio-bottunの背景色を緑に変更 */
+.radio-bottun:has(input[type="radio"]:checked) {
+  background-color: #e8f5e9; /* 薄い緑色の背景 */
+  border-color: #098E5E;
+  border: solid 2px #098E5E;
+}
+
+
+/* 入力フィールドにホバーした時の枠の色を変更 */
+input:hover,textarea:hover {
+  border-color: #098E5E; /* 緑色の枠 */
+  outline-color: #098E5E; /* アウトラインも緑色に */
+}
+
+
+
+
+
+/* ポップアップ通知のスタイル */
+#notification {
+  position: fixed;
+  top: -100%; /* 初期状態では画面外 */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #098E5E;
+  color: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: top 0.5s ease;
+  z-index: 1000;
+  max-width: 90%;
+  width: auto;
+}
+
+#notification div {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+/* 表示状態のクラス */
+#notification.show {
+  top: 20px; /* 表示位置 */
+}
+
+
+
+
+
+
+
+
+
+
